@@ -42,7 +42,7 @@
                 </a>
                 <div>
                     <p class="text-xs text-gray-400 font-medium">Manajemen Kategori</p>
-                    <h1 class="text-base font-bold text-[#6b1a1a] leading-tight">Tambah Kategori</h1>
+                    <h1 class="text-base font-black text-[#6b1a1a] leading-tight">Tambah Kategori</h1>
                 </div>
             </div>
         </header>
@@ -68,7 +68,7 @@
 
                         <div class="mb-6">
                             <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">
-                                Deskripsi
+                                Deskripsi <span class="text-red-400">*</span>  
                             </label>
                             <textarea name="deskripsi" rows="3"
                                 placeholder="Jelaskan jenis pengaduan yang masuk kategori ini..."

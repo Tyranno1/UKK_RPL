@@ -94,7 +94,7 @@
                 <div>
                     <label class="block text-xs font-semibold text-black-200 mb-1">Judul Laporan :</label>
                     <input type="text" name="judul_laporan" value="{{ old('judul_laporan') }}" required
-                        placeholder="Contoh: Kursi kelas XII RPL 3 patah"
+                        placeholder="Contoh: Kursi kelas XII RPL patah"
                         class="w-full rounded-xl bg-[#e6fffa] border-none px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400">
                     @error('judul_laporan')
                         <p class="mt-1 text-xs text-red-500">{{ $message }}</p>
@@ -129,7 +129,7 @@
                 <div>
                     <label class="block text-xs font-semibold text-black-200 mb-1">Lokasi Kejadian :</label>
                     <input type="text" name="lokasi" value="{{ old('lokasi') }}" required
-                        placeholder="Contoh: Kelas XII RPL 3"
+                        placeholder="Contoh: Kelas XII RPL"
                         class="w-full rounded-xl bg-[#e6fffa] border-none px-4 py-2.5 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400">
                     @error('lokasi')
                         <p class="mt-1 text-xs text-red-500">{{ $message }}</p>

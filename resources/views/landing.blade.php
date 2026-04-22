@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <title>SILOKA — Sistem Informasi Lapor & Kelola Aset</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -26,7 +27,7 @@
         </div>
     </nav>
 
-    <section class="min-h-screen flex items-center">
+    <section class="py-48 flex items-center">
         <div class="max-w-6xl mx-auto px-8 w-full grid grid-cols-2 gap-20 items-center">
             <div>
                 <div class="flex items-center gap-2 mb-5">
@@ -42,8 +43,8 @@
                     Selesaikan.
                 </h1>
                 <p class="text-gray-500 text-sm leading-relaxed mb-8 max-w-sm">
-                    SILOKA adalah platform pengaduan sarana dan prasarana sekolah.
-                    Sampaikan laporanmu, pantau prosesnya secara transparan.
+                    SILOKA adalah platform pengaduan aset sarana dan prasarana sekolah.
+                    Sampaikan laporanmu, dan pantau prosesnya secara transparan.
                 </p>
                 <div class="flex items-center gap-3">
                     <a href="{{ route('login') }}"
@@ -127,11 +128,11 @@
         <div class="border-t border-gray-300"></div>
     </div>
 
-    <section class="py-24">
+    <section class="py-36">
         <div class="max-w-6xl mx-auto px-8">
             <div class="mb-12">
-                <p class="text-xs font-bold text-[#6b1a1a] uppercase tracking-widest mb-2">Kenapa SILOKA?</p>
-                <h2 class="text-3xl font-black text-gray-900">Laporan yang gak bakal<br>dicuekin.</h2>
+                <p class="text-xl font-black text-[#6b1a1a] uppercase tracking-widest mb-1">Kenapa SILOKA?</p>
+                <h2 class="text-3xl font-black text-gray-900">Laporan yang gak bakal<br><span class="underline decoration-[#6b1a1a] decoration-2 decoration-offset-2 uppercase">dicuekin.</span></h2>
             </div>
 
             <div class="grid grid-cols-3 gap-6">
@@ -142,7 +143,7 @@
                     </div>
                     <h3 class="text-sm font-bold text-gray-800 group-hover:text-white mb-2 transition-all duration-300">Anti-Dicuekin</h3>
                     <p class="text-xs text-gray-400 group-hover:text-white group-hover:opacity-70 leading-relaxed transition-all duration-300">
-                        Laporanmu langsung masuk ke sistem admin dan tercatat resmi — bukan cuma omongan di lorong sekolah.
+                        Laporanmu langsung masuk ke sistem admin dan tercatat resmi, jadi bukan cuma omongan di lorong sekolah.
                     </p>
                 </div>
 
@@ -152,7 +153,7 @@
                     </div>
                     <h3 class="text-sm font-bold text-gray-800 group-hover:text-white mb-2 transition-all duration-300">Transparan</h3>
                     <p class="text-xs text-gray-400 group-hover:text-white group-hover:opacity-70 leading-relaxed transition-all duration-300">
-                        Kamu bisa lihat prosesnya sampai mana secara langsung — dari Menunggu, Diproses, sampai benar-benar Selesai.
+                        Kamu bisa lihat prosesnya sampai mana secara langsung, mulai dari Menunggu, Diproses, sampai benar-benar Selesai.
                     </p>
                 </div>
 
@@ -171,10 +172,10 @@
     </section>
 
     <div class="max-w-6xl mx-auto px-8">
-        <div class="border-t border-gray-100"></div>
+        <div class="border-t border-gray-300"></div>
     </div>
 
-    <section class="py-24">
+    <section class="py-36">
         <div class="max-w-6xl mx-auto px-8">
             <div class="mb-12">
                 <p class="text-xs font-bold text-[#6b1a1a] uppercase tracking-widest mb-2">Cara Kerja</p>
@@ -191,7 +192,6 @@
                     <p class="text-sm text-gray-400 leading-relaxed">
                         Isi formulir pengaduan dengan judul, deskripsi, lokasi, dan foto bukti kerusakan.
                     </p>
-                    <div class="hidden md:block absolute top-5 left-full w-full h-px bg-gray-100 -translate-x-4"></div>
                 </div>
 
                 <div class="relative">
@@ -202,7 +202,6 @@
                     <p class="text-sm text-gray-400 leading-relaxed">
                         Tim admin meninjau laporanmu dan memberikan tanggapan resmi beserta tindak lanjut.
                     </p>
-                    <div class="hidden md:block absolute top-5 left-full w-full h-px bg-gray-100 -translate-x-4"></div>
                 </div>
 
                 <div>
@@ -219,7 +218,11 @@
         </div>
     </section>
 
-    <section class="pb-24">
+    <div class="max-w-6xl mx-auto px-8">
+        <div class="border-t border-gray-300"></div>
+    </div>
+
+    <section class="py-12">
         <div class="max-w-6xl mx-auto px-8">
             <div class="bg-[#6b1a1a] rounded-3xl px-12 py-12 flex items-center justify-between">
                 <div>

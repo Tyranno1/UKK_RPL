@@ -48,7 +48,7 @@
                 </a>
                 <div>
                     <p class="text-xs text-gray-400 font-medium">Detail Pengaduan</p>
-                    <h1 class="text-base font-bold text-[#6b1a1a] leading-tight">{{ $pengaduan->judul_laporan }}</h1>
+                    <h1 class="text-base font-black text-[#6b1a1a] leading-tight">{{ $pengaduan->judul_laporan }}</h1>
                 </div>
             </div>
             <div class="relative">
@@ -97,15 +97,15 @@
 
                     <div class="bg-white rounded-2xl border border-gray-100 shadow-sm px-6 py-5">
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-sm font-bold text-gray-800">Isi Laporan</h3>
+                            <h3 class="text-sm font-black text-gray-800">Isi Laporan</h3>
                             @if($pengaduan->status == '0')
-                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-yellow-100 text-yellow-700">Menunggu</span>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-yellow-100 text-yellow-700">Menunggu</span>
                             @elseif($pengaduan->status == '1')
-                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-blue-100 text-blue-700">Diproses</span>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-blue-100 text-blue-700">Diproses</span>
                             @elseif($pengaduan->status == '2')
-                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-green-100 text-green-700">Selesai</span>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-green-100 text-green-700">Selesai</span>
                             @elseif($pengaduan->status == '3')
-                                <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase bg-gray-100 text-gray-700">Ditolak</span>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-gray-100 text-gray-700">Ditolak</span>
                             @endif
                         </div>
 

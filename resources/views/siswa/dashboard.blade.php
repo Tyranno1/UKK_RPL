@@ -122,8 +122,7 @@
             <div class="grid grid-cols-5 gap-4 mb-6">
         
                 <a href="{{ route('siswa.dashboard') }}"
-                    class="rounded-2xl shadow-sm border px-5 py-4 flex items-center gap-3 transition duration-150
-                    {{ $statusFilter == 'semua' ? 'bg-[#6b1a1a] border-[#6b1a1a] ring-2 ring-[#6b1a1a] ring-offset-2' : 'bg-white border-gray-200 hover:border-gray-300 ring-1 ring-gray-200' }}">
+                    class="rounded-2xl shadow-sm border px-5 py-4 flex items-center gap-3 transition duration-150 {{ $statusFilter == 'semua' ? 'bg-[#6b1a1a] border-[#6b1a1a] ring-2 ring-[#6b1a1a] ring-offset-2' : 'bg-white border-gray-200 hover:border-gray-300 ring-1 ring-gray-200' }}">
                     <div class="w-10 h-10 rounded-xl {{ $statusFilter == 'semua' ? 'bg-white bg-opacity-20' : 'bg-[#6b1a1a] bg-opacity-10' }} flex items-center justify-center">
                         <i class="fa-solid fa-layer-group {{ $statusFilter == 'semua' ? 'text-white' : 'text-[#6b1a1a]' }} text-base"></i>
                     </div>
@@ -171,7 +170,7 @@
 
                 <a href="{{ route('siswa.dashboard', ['status' => '3']) }}"
                     class="rounded-2xl shadow-sm border px-5 py-4 flex items-center gap-3 transition duration-150
-                    {{ $statusFilter == '3' ? 'bg-gray-400 border-gray-400 ring-2 ring-gray-400 ring-offset-2' : 'bg-white border-gray-200 hover:border-gray-200 ring-1 ring-gray-200' }}">
+                    {{ $statusFilter == '3' ? 'bg-gray-400 border-gray-400 ring-2 ring-gray-400 ring-offset-2' : 'bg-white border-gray-200 hover:border-gray-300 ring-1 ring-gray-200' }}">
                     <div class="w-10 h-10 rounded-xl {{ $statusFilter == '3' ? 'bg-white bg-opacity-30' : 'bg-gray-50' }} flex items-center justify-center">
                         <i class="fa-solid fa-xmark {{ $statusFilter == '3' ? 'text-white' : 'text-gray-500' }} text-base"></i>
                     </div>

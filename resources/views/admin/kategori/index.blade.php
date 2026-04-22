@@ -43,7 +43,7 @@
         <header class="bg-white shadow-sm px-8 py-4 flex items-center justify-between sticky top-0 z-20">
             <div>
                 <p class="text-xs text-gray-400 font-medium">Manajemen</p>
-                <h1 class="text-lg font-bold text-[#6b1a1a] leading-tight">Kategori Pengaduan</h1>
+                <h1 class="text-lg font-black text-[#6b1a1a] leading-tight">Kategori Pengaduan</h1>
             </div>
             <div class="flex items-center gap-3">
                 <a href="{{ route('admin.kategori.create') }}"

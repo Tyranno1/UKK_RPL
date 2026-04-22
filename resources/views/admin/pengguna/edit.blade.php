@@ -37,7 +37,7 @@
             </a>
             <div>
                 <p class="text-xs text-gray-400 font-medium">Manajemen Pengguna</p>
-                <h1 class="text-base font-bold text-[#6b1a1a] leading-tight">Edit Pengguna</h1>
+                <h1 class="text-base font-black text-[#6b1a1a] leading-tight">Edit Pengguna</h1>
             </div>
         </header>
 

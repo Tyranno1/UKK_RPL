@@ -43,11 +43,11 @@
         <header class="bg-white shadow-sm px-8 py-4 flex items-center justify-between sticky top-0 z-20">
             <div>
                 <p class="text-xs text-gray-400 font-medium">Manajemen</p>
-                <h1 class="text-lg font-bold text-[#6b1a1a] leading-tight">Pengguna</h1>
+                <h1 class="text-lg font-black text-[#6b1a1a] leading-tight">Pengguna</h1>
             </div>
             <div class="flex items-center gap-3">
                 <a href="{{ route('admin.pengguna.create') }}"
-                    class="inline-flex items-center gap-2 bg-[#6b1a1a] hover:bg-[#8b0000] text-white text-xs font-bold rounded-xl px-4 py-2.5 transition">
+                    class="inline-flex items-center gap-2 bg-[#6b1a1a] hover:bg-[#8b0000] text-white text-xs font-black rounded-xl px-4 py-2.5 transition">
                     <i class="fa-solid fa-plus"></i>
                     Tambah Pengguna
                 </a>
@@ -93,37 +93,38 @@
             @endif
 
             <div class="grid grid-cols-3 gap-4 mb-6">
-                <a href="{{ route('admin.pengguna.index') }}" class="bg-white rounded-2xl border border-gray-100 shadow-sm px-5 py-4 flex items-center gap-3 transition hover:border-[#6b1a1a] hover:bg-gray-50">
-                    <div class="w-10 h-10 rounded-xl bg-[#6b1a1a] bg-opacity-10 flex items-center justify-center">
-                        <i class="fa-solid fa-users text-[#6b1a1a] text-base"></i>
+                <a href="{{ route('admin.pengguna.index')}}" class="bg-[#6b1a1a] rounded-2xl border border-gray-100 shadow-sm px-5 py-4 flex items-center gap-3 transition duration-150 {{ $levelFilter == 'semua' ? 'bg-[#6b1a1a] border-[#6b1a1a] ring-2 ring-[#6b1a1a] ring-offset-2' : 'bg-white border-gray-200 hover:border-gray-300 ring-1 ring-gray-200' }}">
+
+                    <div class="w-10 h-10 rounded-xl {{ $levelFilter == 'semua' ? 'bg-white bg-opacity-20' : 'bg-[#6b1a1a] bg-opacity-10' }} flex items-center justify-center">
+                        <i class="fa-solid fa-users {{ $levelFilter == 'semua' ? 'text-white' : 'text-[#6b1a1a]' }} text-base"></i>
                     </div>
                     <div>
-                        <p class="text-[10px] text-gray-400 font-medium">Total Pengguna</p>
-                        <p class="text-xl font-black text-gray-800">{{ $totalSiswa + $totalAdmin }}</p>
-                    </div>
-                </a>
-                <a href="{{ route('admin.pengguna.index', ['level' => 'siswa']) }}"
-                    class="rounded-2xl border shadow-sm px-5 py-4 flex items-center gap-3 transition
-                    {{ $levelFilter == 'siswa' ? 'bg-blue-400 border-blue-400' : 'bg-white border-gray-100 hover:border-blue-200' }}">
-                    <div class="w-10 h-10 rounded-xl {{ $levelFilter == 'siswa' ? 'bg-white bg-opacity-20' : 'bg-blue-50' }} flex items-center justify-center">
-                        <i class="fa-solid fa-user-graduate {{ $levelFilter == 'siswa' ? 'text-white' : 'text-blue-500' }} text-base"></i>
-                    </div>
-                    <div>
-                        <p class="text-[10px] font-medium {{ $levelFilter == 'siswa' ? 'text-white opacity-80' : 'text-gray-400' }}">Siswa</p>
-                        <p class="text-xl font-black {{ $levelFilter == 'siswa' ? 'text-white' : 'text-blue-500' }}">{{ $totalSiswa }}</p>
+                        <p class="text-[10px] font-medium {{ $levelFilter == 'semua' ? 'text-white opacity-80' : 'text-gray-400' }}">Total Pengguna</p>
+                        <p class="text-xl font-black {{ $levelFilter == 'semua' ? 'text-white' : 'text-gray-800' }}">{{ $totalSemua }}</p>
                     </div>
                 </a>
                 <a href="{{ route('admin.pengguna.index', ['level' => 'admin']) }}"
-                    class="rounded-2xl border shadow-sm px-5 py-4 flex items-center gap-3 transition
-                    {{ $levelFilter == 'admin' ? 'bg-[#6b1a1a] border-[#6b1a1a]' : 'bg-white border-gray-100 hover:border-gray-300' }}">
-                    <div class="w-10 h-10 rounded-xl {{ $levelFilter == 'admin' ? 'bg-white bg-opacity-20' : 'bg-[#6b1a1a] bg-opacity-10' }} flex items-center justify-center">
-                        <i class="fa-solid fa-user-shield {{ $levelFilter == 'admin' ? 'text-white' : 'text-[#6b1a1a]' }} text-base"></i>
-                    </div>
-                    <div>
-                        <p class="text-[10px] font-medium {{ $levelFilter == 'admin' ? 'text-white opacity-80' : 'text-gray-400' }}">Admin</p>
-                        <p class="text-xl font-black {{ $levelFilter == 'admin' ? 'text-white' : 'text-gray-800' }}">{{ $totalAdmin }}</p>
-                    </div>
-                </a>
+                class="rounded-2xl border shadow-sm px-5 py-4 flex items-center gap-3 transition duration-150
+                {{ $levelFilter == 'admin' ? 'bg-yellow-400 border-yellow-400 ring-2 ring-yellow-400 ring-offset-2' : 'bg-white border-gray-200 hover:border-yellow-200 ring-1 ring-gray-200' }}">
+                <div class="w-10 h-10 rounded-xl {{ $levelFilter == 'admin' ? 'bg-white bg-opacity-30' : 'bg-yellow-50' }} flex items-center justify-center">
+                    <i class="fa-solid fa-user-shield {{ $levelFilter == 'admin' ? 'text-white' : 'text-yellow-400' }} text-base"></i>
+                </div>
+                <div>
+                    <p class="text-[10px] font-medium {{ $levelFilter == 'admin' ? 'text-white opacity-80' : 'text-gray-400' }}">Admin</p>
+                    <p class="text-xl font-black {{ $levelFilter == 'admin' ? 'text-white' : 'text-gray-800' }}">{{ $totalAdmin }}</p>
+                </div>
+            </a>
+            <a href="{{ route('admin.pengguna.index', ['level' => 'siswa']) }}"
+                class="rounded-2xl border shadow-sm px-5 py-4 flex items-center gap-3 transition duration-150
+                {{ $levelFilter == 'siswa' ? 'bg-blue-400 border-blue-400 ring-2 ring-lue-400 ring-offset-2' : 'bg-white border-gray-100 hover:border-blue-200 ring-1 ring-gray-200' }}">
+                <div class="w-10 h-10 rounded-xl {{ $levelFilter == 'siswa' ? 'bg-white bg-opacity-30' : 'bg-blue-50' }} flex items-center justify-center">
+                    <i class="fa-solid fa-user-graduate {{ $levelFilter == 'siswa' ? 'text-white' : 'text-blue-500' }} text-base"></i>
+                </div>
+                <div>
+                    <p class="text-[10px] font-medium {{ $levelFilter == 'siswa' ? 'text-white' : 'text-gray-400' }}">Siswa</p>
+                    <p class="text-xl font-black {{ $levelFilter == 'siswa' ? 'text-white' : 'text-blue-500' }}">{{ $totalSiswa }}</p>
+                </div>
+            </a>
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">

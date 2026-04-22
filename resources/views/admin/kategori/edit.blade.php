@@ -42,7 +42,7 @@
                 </a>
                 <div>
                     <p class="text-xs text-gray-400 font-medium">Manajemen Kategori</p>
-                    <h1 class="text-base font-bold text-[#6b1a1a] leading-tight">Edit Kategori</h1>
+                    <h1 class="text-base font-black text-[#6b1a1a] leading-tight">Edit Kategori</h1>
                 </div>
             </div>
         </header>
