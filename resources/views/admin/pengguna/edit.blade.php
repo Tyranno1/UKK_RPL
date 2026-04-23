@@ -45,12 +45,10 @@
             <div class="max-w-lg">
                 <div class="bg-white rounded-2xl border border-gray-100 shadow-sm px-6 py-6">
 
-                    {{-- ACTION ke update, METHOD di-spoof jadi PUT --}}
                     <form method="POST" action="{{ route('admin.pengguna.update', $user->id) }}">
                         @csrf
                         @method('PUT')
 
-                        {{-- NIS/NIP: readonly, tidak bisa diubah --}}
                         <div class="mb-4">
                             <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">
                                 NIS / NIP
@@ -107,15 +105,21 @@
                             @enderror
                         </div>
 
-                        {{-- Password opsional — kosongkan jika tidak ingin ganti --}}
                         <div class="mb-4">
                             <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">
                                 Password Baru
                                 <span class="ml-1 text-[10px] font-normal text-gray-400 normal-case tracking-normal">(kosongkan jika tidak ingin ganti)</span>
                             </label>
-                            <input type="password" name="password"
-                                placeholder="Min. 8 karakter"
+                            <div class="relative">
+                            <input type="password" name="password" id="password"
                                 class="w-full text-sm border border-gray-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#6b1a1a] transition">
+                                <button type="button"
+                                onclick="togglePassword('password', 'password-icon')"
+                                class="absolute right-5 top-1/2 -translate-y-1/2 mb-1 flex items-center text-gray-400 hover:text-[#6b1a1a] transition">
+                                <i id="password-icon" class="fa-solid fa-eye-slash"></i>
+                            </button>
+                            </div>
+                                <h4 class="text-[10px] font-gray-200 opacity-30">Minimal 8 karakter, mengandung huruf kapital, huruf kecil, angka, dan simbol</h4>
                             @error('password')
                                 <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
                             @enderror
@@ -125,9 +129,15 @@
                             <label class="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">
                                 Konfirmasi Password Baru
                             </label>
+                            <div class="relative">
                             <input type="password" name="password_confirmation"
-                                placeholder="Ulangi password baru"
+                                placeholder="Ulangi password baru" id="password_confirmation"
                                 class="w-full text-sm border border-gray-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#6b1a1a] transition">
+                                <button type="button" onclick="togglePassword('password_confirmation', 'conf-icon')"
+                                    class="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#6b1a1a]">
+                                <i id="conf-icon" class="fa-solid fa-eye-slash"></i>
+                            </button>
+                            </div>
                         </div>
 
                         <div class="flex items-center gap-3">
@@ -146,5 +156,22 @@
         </main>
     </div>
 </div>
+
+<script>
+    function togglePassword(inputId, iconId) {
+        const input = document.getElementById(inputId);
+        const icon = document.getElementById(iconId);
+
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        } else {
+            input.type = 'password';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        }
+    }
+</script>
 
 @endsection

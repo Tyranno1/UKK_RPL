@@ -123,13 +123,13 @@
                             </label>
                             <div class="relative">
                                 <input type="password" name="password" id="password" required
-                                    placeholder="Minimal 8 karakter"
                                     class="w-full text-sm border border-gray-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#6b1a1a] transition pr-12">
                                 <button type="button" onclick="togglePassword('password', 'password-icon')"
                                     class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#6b1a1a]">
                                     <i id="password-icon" class="fa-solid fa-eye-slash"></i>
                                 </button>
                             </div>
+                            <h4 class="text-[10px] font-gray-200 opacity-30">Minimal 8 karakter, mengandung huruf kapital, huruf kecil, angka, dan simbol</h4>
                             @error('password')
                                 <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
                             @enderror

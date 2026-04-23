@@ -28,7 +28,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nis_nip' => ['required', 'string'], // Ubah ini
+            'nis_nip' => ['required', 'string'],
             'password' => ['required', 'string'],
         ];
     }
@@ -41,11 +41,10 @@ class LoginRequest extends FormRequest
         public function authenticate(): void
     {
         $this->ensureIsNotRateLimited();
-        // Ubah 'email' jadi 'nis_nip'
         if (! Auth::attempt($this->only('nis_nip', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
             throw ValidationException::withMessages([
-                'nis_nip' => trans('auth.failed'), // Ubah pesan error
+                'nis_nip' => trans('auth.failed'), 
             ]);
         }
         RateLimiter::clear($this->throttleKey());

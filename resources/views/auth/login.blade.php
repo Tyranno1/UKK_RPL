@@ -60,7 +60,7 @@
                             >
                             <button
                                 type="button"
-                                onclick="togglePassword()"
+                                onclick="togglePassword('password', 'password-icon')"
                                 class="absolute right-5 top-1/2 -translate-y-1/2 mb-1 flex items-center text-gray-500 hover:text-[#6b1a1a] transition"
                             >
                                 <i id="password-icon" class="fa-solid fa-eye-slash text-lg"></i>
@@ -97,18 +97,16 @@
     </div>
 
     <script>
-    function togglePassword() {
+    function togglePassword(inputId, iconId) {
         const input = document.getElementById('password');
-        const icon = document.getElementById('password-icon'); // Pastikan ID ini sama dengan yang ada di tag <i>
+        const icon = document.getElementById('password-icon'); 
 
         if (input.type === 'password') {
             input.type = 'text';
-            // Ganti icon mata coret ke mata terbuka
             icon.classList.remove('fa-eye-slash');
             icon.classList.add('fa-eye');
         } else {
             input.type = 'password';
-            // Kembalikan ke mata coret
             icon.classList.remove('fa-eye');
             icon.classList.add('fa-eye-slash');
         }

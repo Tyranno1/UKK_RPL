@@ -15,7 +15,10 @@ class KategoriSeeder extends Seeder
         ];
 
         foreach ($kategoris as $nama) {
-            Kategori::create(['nama_kategori' => $nama]);
+            Kategori::create([
+                'nama_kategori' => $nama,
+                'deskripsi'     => '-'
+                ]);
         }
     }
 }

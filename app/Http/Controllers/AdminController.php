@@ -94,7 +94,7 @@ class AdminController extends Controller
 
         $pengaduan->update([
             'status'       => '1',
-            'processed_at' => now(), // ← ini yang mengisi timeline
+            'processed_at' => now(), 
         ]);
 
         return redirect()->route('admin.pengaduan.show', $id)
@@ -200,10 +200,12 @@ class AdminController extends Controller
             'nis_nip'  => 'required|string|max:20|unique:users,nis_nip',
             'name'     => 'required|string|max:255',
             'email'    => 'nullable|email|unique:users,email',
-            'kelas'    => 'nullable|string|max:50',
+            'kelas'    => 'nullable|string|max:255',
             'telp'     => 'nullable|string|max:15',
             'level'    => 'required|in:siswa,admin',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/',
+        ], [
+            'password.regex' => 'Password harus mengandung huruf kapital, huruf kecil, angka, dan simbol.',
         ]);
 
         User::create([
@@ -233,9 +235,11 @@ class AdminController extends Controller
             'nis_nip'  => 'nullable|string|max:20|unique:users,nis_nip,'. $id,
             'name'     => 'required|string|max:255',
             'email'    => 'nullable|email|unique:users,email,'. $id,
-            'kelas'    => 'nullable|string|max:50',
+            'kelas'    => 'nullable|string|max:255',
             'telp'     => 'nullable|string|max:15',
-            'password' => 'nullable|string|min:8|confirmed',
+            'password' => 'nullable|string|min:8|confirmed|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/'
+        ], [
+            'password.regex' => 'Password harus mengandung huruf kapital, huruf kecil, angka, dan simbol.',
         ]);
 
         $data = [

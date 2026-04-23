@@ -5,17 +5,14 @@
 
         <div class="flex w-[1000px] h-[620px] rounded-2xl overflow-hidden shadow-2xl">
 
-            {{-- Panel Kiri - Form Register --}}
             <div class="w-1/2 bg-white px-14 py-10 flex flex-col justify-center relative">
 
-                {{-- Logo --}}
                 <div class="absolute top-5 left-7">
                     <a href="{{ url('/') }}">
                         <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-16 w-auto">
                     </a>
                 </div>
 
-                {{-- Judul --}}
                 <h2 class="text-5xl font-black text-gray-900 text-right" style="font-family: 'Poppins', sans-serif;">
                     DAFTAR
                 </h2>
@@ -26,7 +23,6 @@
                 <form method="POST" action="{{ route('register') }}" autocomplete="off">
                     @csrf
 
-                    {{-- Nama Lengkap --}}
                     <div class="mb-3">
                         <label for="name" class="block text-xs font-semibold text-gray-600 mb-1" style="font-family: 'Poppins', sans-serif;">Nama Lengkap :</label>
                         <input
@@ -38,7 +34,6 @@
                         <x-input-error :messages="$errors->get('name')" class="mt-1" />
                     </div>
 
-                    {{-- NIS --}}
                     <div class="mb-3">
                         <label for="nis_nip" class="block text-xs font-semibold text-gray-600 mb-1" style="font-family: 'Poppins', sans-serif;">NIS (Nomor Induk Siswa) :</label>
                         <input
@@ -50,7 +45,6 @@
                         <x-input-error :messages="$errors->get('nis_nip')" class="mt-1" />
                     </div>
 
-                    {{-- Kelas & No Telpon (2 kolom) --}}
                     <div class="flex gap-3 mb-3">
                         <div class="w-1/2">
                             <label for="kelas" class="block text-xs font-semibold text-gray-600 mb-1" style="font-family: 'Poppins', sans-serif;">Kelas :</label>
@@ -74,7 +68,6 @@
                         </div>
                     </div>
 
-                    {{-- Email --}}
                     <div class="mb-3">
                         <label for="email" class="block text-xs font-semibold text-gray-600 mb-1" style="font-family: 'Poppins', sans-serif;">Email :</label>
                         <input
@@ -86,7 +79,6 @@
                         <x-input-error :messages="$errors->get('email')" class="mt-1" />
                     </div>
 
-                    {{-- Password & Konfirmasi (2 kolom) --}}
                     <div class="flex gap-3 mb-5">
                         <div class="w-1/2">
                             <label for="password" class="block text-xs font-semibold text-gray-600 mb-1" style="font-family: 'Poppins', sans-serif;">Password :</label>
@@ -132,7 +124,6 @@
                         </div>
                     </div>
 
-                    {{-- Tombol + Link Login --}}
                     <div class="flex items-center justify-between">
                         <a href="{{ route('login') }}"
                            class="text-xs text-emerald-700 font-semibold hover:text-[#6b1a1a] underline transition leading-5"
@@ -149,7 +140,6 @@
                 </form>
             </div>
 
-            {{-- Panel Kanan - Background Maroon --}}
             <div class="w-1/2 relative overflow-hidden flex flex-col items-center justify-center" style="background-color: #5e0000;">
                 <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-10" style="background-color: #fff;"></div>
                 <div class="absolute -bottom-20 -left-20 w-96 h-96 rounded-full opacity-10" style="background-color: #fff;"></div>
@@ -160,7 +150,6 @@
 
         </div>
 
-        {{-- Footer --}}
         <p class="mt-6 text-xs text-emerald-800 opacity-50 font-medium" style="font-family: 'Poppins', sans-serif;">
             &copy; {{ date('Y') }} UKK Paket 3 - Aplikasi Pengaduan
         </p>

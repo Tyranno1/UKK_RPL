@@ -17,7 +17,7 @@ return new class extends Migration
     $table->string('nis_nip')->unique();
     $table->string('email');
     $table->string('name');
-    $table->string('kelas', 10)->nullable(); // Khusus Siswa
+    $table->string('kelas', 10)->nullable(); 
     $table->string('password');
     $table->string('telp', 15)->nullable();
     $table->enum('level', ['admin', 'siswa'])->default('siswa');
